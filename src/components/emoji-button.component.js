@@ -6,7 +6,7 @@ var EmojiButtonComponent = /** @class */ (function () {
     }
     EmojiButtonComponent.prototype.ngOnChanges = function () { };
     EmojiButtonComponent.prototype.getEmoji = function (emoji) {
-        return emojione.shortnameToImage(emoji);
+        return emojione.toImage(emoji);
     };
     EmojiButtonComponent.decorators = [
         { type: Component, args: [{
