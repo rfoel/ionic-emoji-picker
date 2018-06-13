@@ -8,7 +8,7 @@ import emojione from 'emojione'
     <button
       class="emoji-button" 
       (click)="selectionEmitter.emit(dataToEmit || emoji)">
-      <span [innerHtml]="getEmoji(emoji[0])</span>
+      <span [innerHtml]="getEmoji(emoji[0])></span>
     </button>
   `
 })

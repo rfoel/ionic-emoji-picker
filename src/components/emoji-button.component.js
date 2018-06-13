@@ -13,7 +13,7 @@ var EmojiButtonComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'emoji-button',
                     styleUrls: ['../styles/emoji-button.scss'],
-                    template: "\n    <button\n      class=\"emoji-button\" \n      (click)=\"selectionEmitter.emit(dataToEmit || emoji)\">\n      <span [innerHtml]=\"getEmoji(emoji[0])</span>\n    </button>\n  "
+                    template: "\n    <button\n      class=\"emoji-button\" \n      (click)=\"selectionEmitter.emit(dataToEmit || emoji)\">\n      <span [innerHtml]=\"getEmoji(emoji[0])></span>\n    </button>\n  "
                 },] },
     ];
     /** @nocollapse */
