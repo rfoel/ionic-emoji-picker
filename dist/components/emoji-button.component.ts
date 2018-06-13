@@ -8,7 +8,7 @@ import emojione from 'emojione'
     <button
       class="emoji-button" 
       (click)="selectionEmitter.emit(dataToEmit || emoji)">
-      <span [innerHtml]="getEmoji(emoji[1])"></span>
+      <span [innerHtml]="getEmoji(emoji[0])"></span>
     </button>
   `
 })
@@ -25,7 +25,6 @@ export class EmojiButtonComponent {
   ngOnChanges() {}
 
   getEmoji(emoji) {
-    emoji = emojione.toShort(emoji)
-    return emojione.toImage(emoji)
+    return emojione.unicodeToImage(emoji)
   }
 }
