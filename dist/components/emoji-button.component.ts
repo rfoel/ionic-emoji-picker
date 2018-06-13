@@ -25,6 +25,7 @@ export class EmojiButtonComponent {
   ngOnChanges() {}
 
   getEmoji(emoji) {
+    emoji = emojione.toShort(emoji)
     return emojione.toImage(emoji)
   }
 }
