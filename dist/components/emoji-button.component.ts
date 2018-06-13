@@ -1,28 +1,31 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core'
+import emojione from 'emojione'
 
 @Component({
   selector: 'emoji-button',
   styles: [`:host{display:inline-block}.emoji-button{padding:0;border:0;outline:0;background:0 0;width:34px;height:34px;border-radius:3px;font-size:24px;line-height:1.1;cursor:pointer;-webkit-transition:all .2s;transition:all .2s}.emoji-button:focus,.emoji-button:hover{background:#f1f1f1;border-color:#f1f1f1}`],
   template: `
-<button
-  class="emoji-button" 
-  (click)="selectionEmitter.emit(dataToEmit || emoji)">
-  {{emoji[0]}}
-</button>
+    <button
+      class="emoji-button" 
+      (click)="selectionEmitter.emit(dataToEmit || emoji)">
+      <span [innerHtml]="getEmoji(emoji[0])</span>
+    </button>
   `
 })
-
 export class EmojiButtonComponent {
-  @Input('emoji') emoji;
-  @Input('dataToEmit') dataToEmit;
-  @Input('options') options;
-  @Input('fitzpatrick') fitzpatrick;
+  @Input('emoji') emoji
+  @Input('dataToEmit') dataToEmit
+  @Input('options') options
+  @Input('fitzpatrick') fitzpatrick
 
-  @Output('selection') selectionEmitter : EventEmitter<any> = new EventEmitter();
+  @Output('selection') selectionEmitter: EventEmitter<any> = new EventEmitter()
 
   constructor() {}
 
-  ngOnChanges() {
+  ngOnChanges() {}
 
+  getEmoji(emoji) {
+    emoji = emojione.toShort(emoji)
+    return emojione.shortnameToImage(emoji)
   }
 }
