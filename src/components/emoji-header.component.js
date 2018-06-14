@@ -3,6 +3,7 @@ var EmojiHeaderComponent = /** @class */ (function () {
     function EmojiHeaderComponent() {
         this.categorySelection = new EventEmitter();
         this.searchEmitter = new EventEmitter();
+        console.log('displaySearchBar', this.displaySearchBar);
     }
     EmojiHeaderComponent.decorators = [
         { type: Component, args: [{

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core'
 
 @Component({
   selector: 'emoji-header',
@@ -8,13 +8,14 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
   <emoji-search (search)="searchEmitter.emit($event)" *ngIf="displaySearchBar"></emoji-search>
   `
 })
-
 export class EmojiHeaderComponent {
-  @Input('emojisCategories') emojisCategories;
-  @Input('displaySearchBar') displaySearchBar;
+  @Input('emojisCategories') emojisCategories
+  @Input('displaySearchBar') displaySearchBar
 
-  @Output('categorySelection') categorySelection = new EventEmitter<any>();
-  @Output('search') searchEmitter = new EventEmitter<string>();
-  
-  constructor() { }
+  @Output('categorySelection') categorySelection = new EventEmitter<any>()
+  @Output('search') searchEmitter = new EventEmitter<string>()
+
+  constructor() {
+    console.log('displaySearchBar', this.displaySearchBar)
+  }
 }
