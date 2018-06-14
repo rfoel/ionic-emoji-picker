@@ -8,13 +8,14 @@ var EmojiHeaderComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'emoji-header',
                     styleUrls: ['../styles/emoji-header.scss'],
-                    template: "\n  <emoji-categories [emojisCategories]=\"emojisCategories\" (categorySelection)=\"categorySelection.emit($event)\"></emoji-categories>\n  <emoji-search (search)=\"searchEmitter.emit($event)\" *ngIf=\"_searchBar\"></emoji-search>\n  "
+                    template: "\n  <emoji-categories [emojisCategories]=\"emojisCategories\" (categorySelection)=\"categorySelection.emit($event)\"></emoji-categories>\n  <emoji-search (search)=\"searchEmitter.emit($event)\" *ngIf=\"displaySearchBar\"></emoji-search>\n  "
                 },] },
     ];
     /** @nocollapse */
     EmojiHeaderComponent.ctorParameters = function () { return []; };
     EmojiHeaderComponent.propDecorators = {
         'emojisCategories': [{ type: Input, args: ['emojisCategories',] },],
+        'displaySearchBar': [{ type: Input, args: ['displaySearchBar',] },],
         'categorySelection': [{ type: Output, args: ['categorySelection',] },],
         'searchEmitter': [{ type: Output, args: ['search',] },],
     };

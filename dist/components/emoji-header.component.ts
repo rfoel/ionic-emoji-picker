@@ -5,12 +5,13 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
   styles: [`:host{display:block;border-bottom:1px solid #f9f9f9;border-radius:3px 3px 0 0;padding:10px;background:#fcfcfc}`],
   template: `
   <emoji-categories [emojisCategories]="emojisCategories" (categorySelection)="categorySelection.emit($event)"></emoji-categories>
-  <emoji-search (search)="searchEmitter.emit($event)" *ngIf="_searchBar"></emoji-search>
+  <emoji-search (search)="searchEmitter.emit($event)" *ngIf="displaySearchBar"></emoji-search>
   `
 })
 
 export class EmojiHeaderComponent {
   @Input('emojisCategories') emojisCategories;
+  @Input('displaySearchBar') displaySearchBar;
 
   @Output('categorySelection') categorySelection = new EventEmitter<any>();
   @Output('search') searchEmitter = new EventEmitter<string>();
