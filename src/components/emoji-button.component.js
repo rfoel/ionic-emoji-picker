@@ -1,19 +1,14 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import emojione from 'emojione';
 var EmojiButtonComponent = /** @class */ (function () {
     function EmojiButtonComponent() {
         this.selectionEmitter = new EventEmitter();
     }
     EmojiButtonComponent.prototype.ngOnChanges = function () { };
-    EmojiButtonComponent.prototype.getEmoji = function (emoji) {
-        emoji = emojione.toShort(emoji);
-        return emojione.shortnameToImage(emoji);
-    };
     EmojiButtonComponent.decorators = [
         { type: Component, args: [{
                     selector: 'emoji-button',
                     styleUrls: ['../styles/emoji-button.scss'],
-                    template: "\n    <button\n      class=\"emoji-button\" \n      (click)=\"selectionEmitter.emit(dataToEmit || emoji)\">\n      <span [innerHtml]=\"getEmoji(emoji[0])\"></span>\n    </button>\n  "
+                    template: "\n    <button\n      class=\"emoji-button\" \n      (click)=\"selectionEmitter.emit(dataToEmit || emoji)\">\n      {{emoji[0]}}\n    </button>\n  "
                 },] },
     ];
     /** @nocollapse */

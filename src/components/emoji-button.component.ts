@@ -1,5 +1,4 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core'
-import emojione from 'emojione'
 
 @Component({
   selector: 'emoji-button',
@@ -8,7 +7,7 @@ import emojione from 'emojione'
     <button
       class="emoji-button" 
       (click)="selectionEmitter.emit(dataToEmit || emoji)">
-      <span [innerHtml]="getEmoji(emoji[0])"></span>
+      {{emoji[0]}}
     </button>
   `
 })
@@ -23,9 +22,4 @@ export class EmojiButtonComponent {
   constructor() {}
 
   ngOnChanges() {}
-
-  getEmoji(emoji) {
-    emoji = emojione.toShort(emoji)
-    return emojione.shortnameToImage(emoji)
-  }
 }

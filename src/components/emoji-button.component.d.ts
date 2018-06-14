@@ -7,5 +7,4 @@ export declare class EmojiButtonComponent {
     selectionEmitter: EventEmitter<any>;
     constructor();
     ngOnChanges(): void;
-    getEmoji(emoji: any): any;
 }
