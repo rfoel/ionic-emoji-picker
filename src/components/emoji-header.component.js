@@ -8,7 +8,7 @@ var EmojiHeaderComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'emoji-header',
                     styleUrls: ['../styles/emoji-header.scss'],
-                    template: "\n  <emoji-categories [emojisCategories]=\"emojisCategories\" (categorySelection)=\"categorySelection.emit($event)\"></emoji-categories>\n  <emoji-search (search)=\"searchEmitter.emit($event)\" *ngIf=\"\"></emoji-search>\n  "
+                    template: "\n  <emoji-categories [emojisCategories]=\"emojisCategories\" (categorySelection)=\"categorySelection.emit($event)\"></emoji-categories>\n  <emoji-search (search)=\"searchEmitter.emit($event)\" *ngIf=\"_searchBar\"></emoji-search>\n  "
                 },] },
     ];
     /** @nocollapse */
