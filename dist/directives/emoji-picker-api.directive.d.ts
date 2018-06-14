@@ -6,7 +6,9 @@ export declare class EmojiPickerApiDirective {
     private _vcr;
     private _el;
     private _directionCode;
+    private _searchBar;
     emojiPickerDirection: string;
+    displaySearchBar: boolean;
     emojiPickerIf: boolean;
     emojiPickerIfEmitter: EventEmitter<boolean>;
     selectEmitter: EventEmitter<{}>;

@@ -12,6 +12,7 @@ var EmojiPickerApiDirective = /** @class */ (function () {
         this._vcr = _vcr;
         this._el = _el;
         this._directionCode = DIRECTIONS.bottom;
+        this._searchBar = false;
         this.emojiPickerIfEmitter = new EventEmitter();
         this.selectEmitter = new EventEmitter();
         this._emojiPickerOpenState = new Subject();
@@ -38,6 +39,13 @@ var EmojiPickerApiDirective = /** @class */ (function () {
             else {
                 this._directionCode = DIRECTIONS[direction];
             }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EmojiPickerApiDirective.prototype, "displaySearchBar", {
+        set: function (willDisplay) {
+            this._searchBar = willDisplay;
         },
         enumerable: true,
         configurable: true
@@ -84,6 +92,7 @@ var EmojiPickerApiDirective = /** @class */ (function () {
     ]; };
     EmojiPickerApiDirective.propDecorators = {
         'emojiPickerDirection': [{ type: Input, args: ['emojiPickerDirection',] },],
+        'displaySearchBar': [{ type: Input, args: ['displaySearchBar',] },],
         'emojiPickerIf': [{ type: Input, args: ['emojiPickerIf',] },],
         'emojiPickerIfEmitter': [{ type: Output, args: ['emojiPickerIfChange',] },],
         'selectEmitter': [{ type: Output, args: ['emojiPickerSelect',] },],

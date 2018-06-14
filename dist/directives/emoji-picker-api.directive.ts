@@ -26,6 +26,7 @@ import { EmojiEvent } from "../";
  })
 export class EmojiPickerApiDirective {
   private _directionCode: DIRECTIONS = DIRECTIONS.bottom;
+  private _searchBar: Boolean = false;
 
   @Input('emojiPickerDirection') set emojiPickerDirection(direction: string) {
     if (DIRECTIONS[direction] === undefined) {
@@ -34,6 +35,10 @@ export class EmojiPickerApiDirective {
     } else {
       this._directionCode = DIRECTIONS[direction];
     }
+  }
+
+  @Input('displaySearchBar') set displaySearchBar(willDisplay: boolean) {
+    this._searchBar = willDisplay
   }
 
   @Input('emojiPickerIf') set emojiPickerIf(condition: boolean) {

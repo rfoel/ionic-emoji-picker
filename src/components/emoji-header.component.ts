@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
   styleUrls: ['../styles/emoji-header.scss'],
   template: `
   <emoji-categories [emojisCategories]="emojisCategories" (categorySelection)="categorySelection.emit($event)"></emoji-categories>
-  <emoji-search (search)="searchEmitter.emit($event)"></emoji-search>
+  <emoji-search (search)="searchEmitter.emit($event)" *ngIf=""></emoji-search>
   `
 })
 
