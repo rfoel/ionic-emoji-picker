@@ -5,14 +5,14 @@ export declare class EmojiContentComponent {
     emojiSelectionEmitter: EventEmitter<any>;
     private _emojis;
     emojis: {
-        "emojis": string[][];
-        "name": string;
-        "icon": string[];
+        emojis: string[][];
+        name: string;
+        icon: string[];
     }[];
     emojisCategories: ({
-        "emojis": string[][];
-        "name": string;
-        "icon": string[];
+        emojis: string[][];
+        name: string;
+        icon: string[];
     } & {
         emojis: any[];
     })[];
